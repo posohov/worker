@@ -27,6 +27,7 @@
     <select />
   </component>
   <component name="ProjectId" id="1WzTYqeuRBcXC8MdI58MRrXUD6a" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -51,7 +52,7 @@
       <updated>1580151473466</updated>
       <workItem from="1580151475051" duration="651000" />
       <workItem from="1580152421811" duration="5645000" />
-      <workItem from="1580237399462" duration="4670000" />
+      <workItem from="1580237399462" duration="5286000" />
     </task>
     <servers />
   </component>
