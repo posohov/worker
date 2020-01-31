@@ -15,12 +15,22 @@ $count = mysqli_num_rows($res);
 var_dump($count);
 $row1 = mysqli_fetch_array($res);
 $row2 = mysqli_fetch_array($res);
-$row3 = mysqli_fetch_assoc($res);
-print_r($row3) . '<br>';
+$row3 = mysqli_fetch_row($res);
+//print_r($row3) . '<br>';
 
-print_r($row1);
-print_r($row2);
+//print_r($row1) .'<br>';
+//print_r($row2) . '<br>';
+while($row = mysqli_fetch_assoc($res)) {
+    echo $row["id"] . " " . $row["name"] . " " .$row["last_name"]  . " " . $row["profession"] . " " . $row["salary"] . "<br>";
+}
+echo "<hr>";
+$query = "SELECT * FROM users WHERE salary>1000;";
+$res = mysqli_query($connect, $query);
 
+echo '<br>';
+while ($row = mysqli_fetch_assoc($res)) {
+    echo implode(' ', $row) . nl2br(PHP_EOL);
+}
 echo '<hr>';
 echo '<hr>';
 
@@ -56,6 +66,10 @@ if($count) {
     }
 }
 // var_dump($info);
+$array = array('lastname', 'email', 'phone');
+$comma_separated = implode(",", $array);
+
+echo $comma_separated; // lastname,email,phone
 ?>
 
 
