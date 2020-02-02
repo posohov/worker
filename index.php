@@ -1,4 +1,18 @@
+
+
 <?php
+var_dump($_POST);
+echo "<hr>";
+$errors = [];
+foreach($_POST as $key => $value) {
+    if(empty($value)) {
+        $errors[$key] = $key;
+        echo "Введите" .  $errors[$key];
+    } else {
+//        echo "good";
+    }
+}
+
 $connect = mysqli_connect('localhost', 'root', '', "worker");
 mysqli_set_charset($connect, "utf8");
 if(mysqli_connect_errno()) {
@@ -32,6 +46,13 @@ while ($row = mysqli_fetch_assoc($res)) {
     echo implode(' ', $row) . nl2br(PHP_EOL);
 }
 echo '<hr>';
+$query  = "SELECT name, last_name FROM users;";
+$res = mysqli_query($connect, $query);
+while($row = mysqli_fetch_assoc($res)) {
+    echo implode('', $row) . '<br>';
+    echo '<hr>';
+
+}
 echo '<hr>';
 
 $con = mysqli_connect("localhost", "root", "", "testsite");
@@ -71,10 +92,4 @@ $comma_separated = implode(",", $array);
 
 echo $comma_separated; // lastname,email,phone
 ?>
-
-
-
-
-
-
 
