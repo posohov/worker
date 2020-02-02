@@ -9,7 +9,7 @@ foreach($_POST as $key => $value) {
         $errors[$key] = $key;
         echo "Введите" .  $errors[$key];
     } else {
-//        echo "good";
+        echo "good";
     }
 }
 
